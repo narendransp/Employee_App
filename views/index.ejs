@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Employees</title>
-    <link href="styles/index.css" rel="stylesheet" />
+    <link href="/styles/index.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 
@@ -19,7 +19,7 @@
   </nav>
   <section class="hero-section d-flex align-items-center justify-content-center text-center">
         <div class="hero-overlay">
-            <h1 class="fw-bold">Employess Directory</h1>
+            <h1 class="fw-bold">Employees Directory</h1>
             <p class="lead">Manage your employees efficiently</p>
             <a href="/registration" class="btn btn-success mt-3">
                 Add New Employee
@@ -38,12 +38,12 @@
               <p class="mb-1"><strong>Location:</strong> <%= emp.location %></p>
               <p><strong>Salary:</strong> ₹ <%= emp.salary %></p>
               <div class="d-flex gap-2">
-                <form method="POST" action="/remove/<%= emp.id %>">
+                <form action="/remove/<%= emp._id %>" method="post">
                   <button class="btn btn-danger btn-sm">Remove</button>
                 </form>
-                <form method="GET" action="/edit/<%= emp.id %>">
+                <a href="/edit/<%= emp._id %>">
                   <button class="btn btn-primary btn-sm">Edit</button>
-                </form>
+                </a>
               </div>
             </div>
           </div>
